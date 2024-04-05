@@ -62,7 +62,7 @@ public class Test {
     @org.testng.annotations.Test(priority = 3, description = "Verify update user details with updated data for a valid user")
     public void updateValidUser() {
         RestAssured.baseURI = baseURI;
-        String updateRequestBody = "{\"name\":\"mary\",\"gender\":\"female\",\"email\":\"mbl09@gmail.com\",\"status\":\"inactive\"}";
+        String updateRequestBody = "{\"name\":\"mary\",\"gender\":\"female\",\"email\":\"mbl889@gmail.com\",\"status\":\"inactive\"}";
 
         // Perform a PUT request to update the user
         Response updateResponse = RestAssured.given()
@@ -78,7 +78,7 @@ public class Test {
         Assert.assertEquals(updateResponse.getStatusCode(), 200);
         //Assertion to verify updated user details in response body
         Assert.assertEquals(updateResponse.jsonPath().getString("name"), "mary", "User name updated successfully");
-        Assert.assertEquals(updateResponse.jsonPath().getString("email"), "mbl09@gmail.com", "User email updated successfully");
+        Assert.assertEquals(updateResponse.jsonPath().getString("email"), "mbl889@gmail.com", "User email updated successfully");
         Assert.assertEquals(updateResponse.jsonPath().getString("status"), "inactive", "User status updated successfully");
         Assert.assertEquals(updateResponse.jsonPath().getString("gender"), "female", "User gender updated successfully");
     }
